@@ -12,7 +12,7 @@ def main():
     soup = BeautifulSoup(web_content, 'html.parser')
     article_title = soup.find(itemprop="name headline").getText()
     article_content = soup.find(class_="article-body").getText()
-    with open(output_filename, 'a') as f:
+    with open(output_filename, 'w') as f:
         f.write(f'Title: {article_title}')
         f.write(f'Content: {article_content}')
 

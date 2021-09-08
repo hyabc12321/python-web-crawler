@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 
 url = "https://www.ptt.cc/bbs/hotboards.html"
-
+output_filename = 'Lesson1/example/hotboard.txt'
 
 def main():
     r = requests.get(url)
@@ -14,8 +14,9 @@ def main():
     board_names = [e.getText() for e in board_name_elements]
     popluarity_elements = soup.find_all('div', class_="board-nuser")
     popularities = [int(e.getText()) for e in popluarity_elements]
-    for pop, bn in zip(popularities, board_names):
-        print(pop, bn)
+    with open(output_filename, 'w') as f:
+        for pop, bn in zip(popularities, board_names):
+            f.write(f'{pop}, {bn} \n')
 
 
 if __name__ == '__main__':
