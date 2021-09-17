@@ -3,7 +3,7 @@ import googlemaps
 
 
 def main():
-    gmaps = googlemaps.Client(key='')
+    gmaps = googlemaps.Client(key='AIzaSyDCzZt5bmgTqlruBeVGap01uNDMClQgIYc')
     query = '甜點'
     location = (25.0300378,121.5262015)
     radius = 2500
